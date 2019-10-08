@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { ThemeProvider, Button } from 'react-native-elements';
+
+const theme = {
+    Button: {
+        titleStyle: {
+            color: '#EC2969',
+        },
+    },
+};
 
 class Login extends Component {
 
@@ -7,30 +16,40 @@ class Login extends Component {
         return (
             <View style={{
                 flex: 1,
-                backgroundColor: 'steelblue',
+                backgroundColor: '#FBFCEA',
                 color: 'white'
             }}>
 
                 <View style={{
-                    flex: 1, flexDirection: 'column',
+                    flex: 3, flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }} >
+                    <Image source={require('../images/logo.jpg')} />
+                </View>
+                <View style={{
+                    flex: 1, flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    alignItems: 'center'
+                }} >
+
                     <Button
 
                         onPress={() => {
                             alert('You tapped login!');
                         }}
+                        titleStyle={{ color: '#EC2969' }}
                         title="Login"
-                        color="#FFFFFF"
+                        type="outline"
                     />
                     <Button
 
                         onPress={() => {
                             alert('You tapped register!');
                         }}
+                        titleStyle={{ color: '#EC2969' }}
                         title="Register"
-                        color="#FFFFFF"
+                        type="outline"
                     />
                 </View>
             </View>
